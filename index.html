@@ -65,8 +65,9 @@ input,select,textarea{font-size:16px!important}
 <aside class="sidebar">
 <a class="brand" href="#" aria-label="Minhas Contas, in&iacute;cio"><span class="brand-mark" data-icon="brand"></span><span>minhas<span class="brand-light">contas</span><small>SEU DINHEIRO, EM DIA</small></span></a>
 <p class="sidebar-label">SEU ESPA&Ccedil;O</p>
-<nav class="side-nav" aria-label="Navega&ccedil;&atilde;o principal"><button class="nav-item" data-view="incomes"><span data-icon="download"></span><span>Entradas</span></button>
+<nav class="side-nav" aria-label="Navega&ccedil;&atilde;o principal">
 <button class="nav-item active" data-view="home" aria-current="page"><span data-icon="home"></span><span>Vis&atilde;o geral</span></button>
+<button class="nav-item" data-view="incomes"><span data-icon="download"></span><span>Entradas</span></button>
 <button class="nav-item" data-view="bills"><span data-icon="receipt"></span><span>Contas fixas</span></button>
 <button class="nav-item" data-view="plans"><span data-icon="layers"></span><span>Parcelas</span><span class="nav-count" id="side-plan-count">0</span></button>
 <button class="nav-item" data-view="history"><span data-icon="chart"></span><span>Hist&oacute;rico</span></button>
@@ -99,12 +100,12 @@ input,select,textarea{font-size:16px!important}
 <section class="view" id="view-plans" hidden aria-labelledby="plans-title"><div class="page-heading"><div><span class="eyebrow">UM PASSO DE CADA VEZ</span><h1 id="plans-title">Planos que <em>se completam.</em></h1><p>Uma vis&atilde;o de tudo que voc&ecirc; parcelou.</p></div><button class="button primary" data-action="new-plan"><span data-icon="plus"></span> Nova compra</button></div><div class="plans-overview" id="plans-overview"></div><div class="list-toolbar"><div class="filter-tabs" aria-label="Filtrar compras"><button class="plan-filter active" data-plan-filter="active" aria-pressed="true">Em andamento</button><button class="plan-filter" data-plan-filter="done" aria-pressed="false">Conclu&iacute;das</button><button class="plan-filter" data-plan-filter="all" aria-pressed="false">Todas</button></div><div class="search-field compact"><span data-icon="search"></span><input id="plan-search" type="search" placeholder="Buscar compra..." aria-label="Buscar compras" autocomplete="off"></div></div><div id="plan-list" class="plan-grid"></div></section>
 <section class="view" id="view-history" hidden aria-labelledby="history-title"><div class="page-heading"><div><span class="eyebrow">SUA EVOLU&Ccedil;&Atilde;O</span><h1 id="history-title">Cada m&ecirc;s <em>conta.</em></h1><p>Consulte pagamentos e veja seus compromissos ao longo do tempo.</p></div><button class="button secondary" id="export-csv"><span data-icon="download"></span> Exportar m&ecirc;s</button></div><section class="panel history-chart-panel"><div class="section-heading tight"><h2>&Uacute;ltimos seis meses</h2><span class="chart-legend"><i></i> Pago <i></i> A pagar</span></div><div id="history-chart" class="history-chart"></div><p class="fineprint">Valores por m&ecirc;s de vencimento, incluindo parcelas. N&atilde;o &eacute; um extrato banc&aacute;rio.</p></section><div id="history-list" class="history-list"></div></section>
 <section class="view" id="view-incomes" hidden aria-labelledby="incomes-title"><div class="page-heading"><div><h1 id="incomes-title">Seu dinheiro <em>chegando.</em></h1><p>Salário, renda extra e outros valores que você já recebeu.</p></div><button class="button primary" data-action="new-income"><span data-icon="plus"></span> Nova entrada</button></div><div id="cash-incomes" class="cash-grid"></div><p class="fineprint">A lista e o valor destinado ao mês usam o mês de referência. Já o movimento de caixa usa as datas reais de recebimento e pagamento, sem acumular meses anteriores. Um adiantamento entra no caixa quando é recebido e aparece na lista do mês ao qual pertence; não é contado duas vezes.</p><div class="section-heading" style="margin-top:24px"><h2>Entradas do mês</h2><button class="button secondary" data-action="income-csv">Exportar entradas</button></div><div id="income-list" class="bill-list"></div></section>
-<section class="view" id="view-settings" hidden aria-labelledby="settings-title"><div class="page-heading"><div><span class="eyebrow">DO SEU JEITO</span><h1 id="settings-title">Seu espa&ccedil;o. <em>Suas regras.</em></h1><p>Prefer&ecirc;ncias, lembretes e cuidado com seus dados.</p></div><span class="version-pill">EDI&Ccedil;&Atilde;O 2.2</span></div><div class="settings-grid">
+<section class="view" id="view-settings" hidden aria-labelledby="settings-title"><div class="page-heading"><div><span class="eyebrow">DO SEU JEITO</span><h1 id="settings-title">Seu espa&ccedil;o. <em>Suas regras.</em></h1><p>Prefer&ecirc;ncias, lembretes e cuidado com seus dados.</p></div><span class="version-pill">EDI&Ccedil;&Atilde;O 2.4</span></div><div class="settings-grid">
 <section class="panel setting-card"><div class="setting-title"><span class="setting-icon" data-icon="sparkles"></span><div><h2>Apar&ecirc;ncia e experi&ecirc;ncia</h2><p>Confort&aacute;vel de dia. Elegante &agrave; noite.</p></div></div><div class="theme-options"><button class="theme-choice" data-theme-choice="dark"><span data-icon="moon"></span> Escuro</button><button class="theme-choice" data-theme-choice="light"><span data-icon="sun"></span> Claro</button><button class="theme-choice" data-theme-choice="system"><span data-icon="monitor"></span> Sistema</button></div><label class="switch-row"><span><strong>Anima&ccedil;&otilde;es suaves</strong><small>Transi&ccedil;&otilde;es, confirma&ccedil;&otilde;es e celebra&ccedil;&otilde;es.</small></span><input id="motion-toggle" type="checkbox" role="switch" checked></label><p class="fineprint">A prefer&ecirc;ncia de reduzir movimento do aparelho sempre tem prioridade. Estas prefer&ecirc;ncias ficam neste navegador.</p><button class="button secondary full" id="test-toast"><span data-icon="check-circle"></span> Experimentar uma confirma&ccedil;&atilde;o</button></section>
 <section class="panel setting-card"><div class="setting-title"><span class="setting-icon" data-icon="bell"></span><div><h2>Lembretes de vencimento</h2><p>Para contas fixas e parcelas.</p></div></div><p class="status-box" id="push-status">Notifica&ccedil;&otilde;es ainda n&atilde;o ativadas.</p><label class="field" hidden>Hor&aacute;rio dos avisos<select id="notification-hour"></select><small>Hor&aacute;rio de S&atilde;o Paulo. A anteced&ecirc;ncia &eacute; definida em cada conta ou compra.</small></label><label class="switch-row" hidden><span><strong>Notifica&ccedil;&otilde;es discretas</strong><small>Ocultar nomes e valores nos avisos.</small></span><input id="private-notifications" type="checkbox" role="switch" checked></label><button class="button primary full" id="activate-push"><span data-icon="bell"></span> Ativar notifica&ccedil;&otilde;es</button><div class="button-row"><button id="test-push" class="button secondary" hidden>Enviar teste</button><button id="disable-push" class="button ghost" hidden>Desativar neste aparelho</button></div><p class="fineprint">Os avisos aparecem dentro do aplicativo. Esta edi&ccedil;&atilde;o no GitHub Pages n&atilde;o envia notifica&ccedil;&otilde;es com o site fechado. Defina a anteced&ecirc;ncia em cada conta ou compra.</p></section>
-<section class="panel setting-card"><div class="setting-title"><span class="setting-icon" data-icon="shield"></span><div><h2>Seus dados, com cuidado</h2><p>Uma c&oacute;pia faz toda a diferen&ccedil;a.</p></div></div><p class="muted" id="data-description"></p><div class="button-row"><button id="export-data" class="button secondary"><span data-icon="download"></span> Salvar c&oacute;pia</button><button id="import-data" class="button secondary"><span data-icon="upload"></span> Restaurar</button></div><input type="file" id="import-file" accept="application/json,.json" hidden><p class="fineprint">O backup cont&eacute;m dados financeiros sem criptografia. Guarde em local privado. C&oacute;pias da vers&atilde;o anterior tamb&eacute;m s&atilde;o aceitas. N&atilde;o cadastre senhas banc&aacute;rias.</p><button id="load-demo" class="button ghost full">Carregar demonstra&ccedil;&atilde;o fict&iacute;cia</button><button id="clear-data" class="button danger full">Apagar dados locais</button><button id="logout" class="button secondary full" hidden>Sair e desativar avisos neste aparelho</button></section>
+<section class="panel setting-card"><div class="setting-title"><span class="setting-icon" data-icon="shield"></span><div><h2>Seus dados, com cuidado</h2><p>Uma c&oacute;pia faz toda a diferen&ccedil;a.</p></div></div><p class="muted" id="data-description"></p><div class="button-row"><button id="export-data" class="button secondary"><span data-icon="download"></span> Salvar c&oacute;pia</button><button id="import-data" class="button secondary"><span data-icon="upload"></span> Restaurar</button></div><p id="restore-status" class="fineprint" role="status" aria-live="polite"></p><input type="file" id="import-file" accept="application/json,.json" hidden><p class="fineprint">O backup cont&eacute;m dados financeiros sem criptografia. Guarde em local privado. C&oacute;pias da vers&atilde;o anterior tamb&eacute;m s&atilde;o aceitas. N&atilde;o cadastre senhas banc&aacute;rias.</p><button id="load-demo" class="button ghost full">Carregar demonstra&ccedil;&atilde;o fict&iacute;cia</button><button id="clear-data" class="button danger full">Apagar dados locais</button><button id="logout" class="button secondary full" hidden>Sair e desativar avisos neste aparelho</button></section>
 <section class="panel setting-card"><div class="setting-title"><span class="setting-icon" data-icon="phone"></span><div><h2>Na Tela de In&iacute;cio</h2><p>Seu app sempre por perto.</p></div></div><div class="install-steps"><p><b>1</b> Abra o endere&ccedil;o do GitHub Pages no Safari.</p><p><b>2</b> Toque em compartilhar e em <strong>Adicionar &agrave; Tela de In&iacute;cio</strong>.</p><p><b>3</b> Abra pelo &iacute;cone e consulte a central de avisos.</p></div><p class="fineprint">No Android, use a op&ccedil;&atilde;o Adicionar &agrave; tela inicial do navegador. &Eacute; necess&aacute;ria conex&atilde;o para carregar o site; esta edi&ccedil;&atilde;o n&atilde;o oferece modo offline garantido.</p></section>
-</div><p class="app-footer">Feito para trazer leveza. Minhas Contas &middot; 2.2<br>Controle manual. Nenhum pagamento &eacute; realizado pelo aplicativo.</p></section>
+</div><p class="app-footer">Feito para trazer leveza. Minhas Contas &middot; 2.4<br>Controle manual. Nenhum pagamento &eacute; realizado pelo aplicativo.</p></section>
 </main></div>
 <nav class="bottom-nav" aria-label="Navega&ccedil;&atilde;o no celular"><button class="nav-item active" data-view="home" aria-current="page"><span data-icon="home"></span><span>In&iacute;cio</span></button><button class="nav-item" data-view="bills"><span data-icon="receipt"></span><span>Contas</span></button><button class="nav-item" data-view="plans"><span data-icon="layers"></span><span>Parcelas</span></button><button class="nav-item" data-view="history"><span data-icon="chart"></span><span>Hist&oacute;rico</span></button><button class="nav-item" data-view="settings"><span data-icon="sliders"></span><span>Ajustes</span></button></nav>
 </div>
@@ -778,6 +779,19 @@ input,select,textarea{font-size:16px!important}
       render();
     } catch { localCorrupt = true; notify('Não foi possível ler os dados. Restaure uma cópia em Ajustes.', 'error'); }
   }
+  function orderedCategories(items) {
+    return [...items].sort((a,b)=>a==='Outros'?1:b==='Outros'?-1:a.localeCompare(b,'pt-BR'));
+  }
+  function restoredMonth(data) {
+    const current=C.clock().month, months=new Set([current]);
+    if(current<'2199-12')months.add(C.shiftMonth(current,1));
+    data.bills.forEach(b=>{if(b.startMonth>=current)months.add(b.startMonth);});
+    data.plans.forEach(p=>C.planRows(data,p).forEach(r=>{const m=r.due.slice(0,7);if(m>=current)months.add(m);}));
+    const pending=[...months].sort().find(m=>C.rows(data,m).some(r=>!r.payment));
+    if(pending)return pending;
+    const entries=data.incomes.map(i=>i.referenceMonth).filter(m=>m>=current).sort();
+    return entries[0]||current;
+  }
   function bind() {
     $$('.brand,.mobile-brand').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();setView('home');}));
     $$('.nav-item').forEach(el=>el.addEventListener('click',()=>setView(el.dataset.view)));
@@ -823,11 +837,29 @@ input,select,textarea{font-size:16px!important}
     $('#import-data').addEventListener('click',()=>$('#import-file').click());
     $('#import-file').addEventListener('change',run(async e=>{
       const file=e.target.files?.[0];e.target.value='';if(!file)return;
-      if(file.size>1048576)throw new Error('Arquivo muito grande. O limite \u00e9 1 MB.');
-      let clean;try{clean=C.validate(JSON.parse(await file.text()));}catch(error){throw new Error('N\u00e3o foi poss\u00edvel restaurar: '+error.message);}
-      if(!await confirmAction('Restaurar c\u00f3pia?',`Substituir todos os dados por ${clean.bills.length} contas, ${clean.plans.length} compras, ${clean.incomes.length} entradas e ${Object.keys(clean.payments).length} pagamentos? N\u00e3o h\u00e1 mesclagem com os registros atuais.`,'Restaurar',true))return;
+      $('#restore-status').textContent='Conferindo o backup…';
+      let clean;
+      try {
+        if(file.size>1048576)throw new Error('Arquivo muito grande. O limite é 1 MB.');
+        const raw=JSON.parse((await file.text()).replace(/^\uFEFF/,''));
+        if(raw?.schema>4)throw new Error('Este backup foi criado por uma versão mais nova. Atualize o site antes de restaurar.');
+        clean=C.validate(raw);
+      } catch(error) {
+        $('#restore-status').textContent='Não foi possível restaurar. '+(error instanceof SyntaxError?'O arquivo não é um JSON válido. Selecione o backup exportado pelo aplicativo.':error.message)+' Seus dados atuais foram mantidos.';
+        notify('Confira a mensagem de restauração em Ajustes.','error');return;
+      }
+      const targetMonth=restoredMonth(clean), count=C.rows(clean,targetMonth).length;
+      const summary=`Backup válido: ${clean.bills.length} contas fixas, ${clean.plans.length} compras parceladas, ${clean.incomes.length} entradas e ${Object.keys(clean.payments).length} pagamentos.`;
+      $('#restore-status').textContent=summary;
+      const explanation=`${summary} A visão geral abrirá em ${monthLabel(targetMonth)}, com ${count} compromissos. Contas e parcelas de outros meses continuam preservadas. A restauração substitui todos os dados atuais, inclusive entradas; não há mesclagem. Salve uma cópia dos dados atuais antes de continuar.`;
+      if(!await confirmAction('Restaurar este backup?',explanation,'Restaurar',true)){$('#restore-status').textContent='Restauração cancelada. Seus dados atuais foram mantidos.';return;}
       const oldCorrupt=localCorrupt;if(localCorrupt){try{lastSaved=localStorage.getItem(storageKey);}catch{}}localCorrupt=false;
-      if(await commit(s=>Object.assign(s,clean))){saveDemoFlag(false);render();notify('Backup restaurado. Contas, entradas e pagamentos estão prontos.');}else localCorrupt=oldCorrupt;
+      if(await commit(s=>Object.assign(s,clean))){
+        saveDemoFlag(false);month=targetMonth;filter='all';planFilter='active';$('#bill-search').value='';$('#plan-search').value='';
+        $('#restore-status').textContent=summary+' Restauração concluída.';setView('home');
+        notify(`Backup restaurado. Exibindo ${monthLabel(month)}. Use as setas para consultar outros meses.`);
+      }else {localCorrupt=oldCorrupt;$('#restore-status').textContent='Não foi possível salvar a restauração. Consulte o aviso e tente novamente.';}
+
     }));
     $('#export-csv').addEventListener('click',exportCSV);
     $('#load-demo').addEventListener('click',run(loadDemo));$('#start-clean').addEventListener('click',run(clearLocal));$('#clear-data').addEventListener('click',run(clearLocal));
@@ -847,9 +879,9 @@ input,select,textarea{font-size:16px!important}
     hydrate();
     try{const p=JSON.parse(localStorage.getItem(prefKey)||'null');if(p){prefs={theme:['light','dark','system'].includes(p.theme)?p.theme:'dark',motion:p.motion!==false,hideValues:p.hideValues===true};}}catch{}
     applyPrefs();
-    const categories=C.categories.map(c=>`<option>${esc(c)}</option>`).join('');$('#bill-category').innerHTML=categories;$('#plan-category').innerHTML=categories;
+    const categories=orderedCategories(C.categories).map(c=>`<option>${esc(c)}</option>`).join('');$('#bill-category').innerHTML=categories;$('#plan-category').innerHTML=categories;
     $('#notification-hour').innerHTML=Array.from({length:24},(_,h)=>`<option value="${h}">${String(h).padStart(2,'0')}:00</option>`).join('');
-    $('#income-category').innerHTML=C.incomeCategories.map(c=>`<option>${esc(c)}</option>`).join('');
+    $('#income-category').innerHTML=orderedCategories(C.incomeCategories).map(c=>`<option>${esc(c)}</option>`).join('');
     bind();render();
     if(mode==='local'){
       try{
